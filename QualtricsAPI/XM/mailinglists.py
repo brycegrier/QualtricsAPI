@@ -47,7 +47,7 @@ class MailingList(Credentials):
 
         mailing_lists = pd.DataFrame()
         headers, base_url = self.header_setup(xm=True)
-        url = base_url + f"/mailinglists/?pageSize={page_size}"
+        url = base_url + f"/mailinglists/?pageSize={page_size}&includeCount=true"
         try:
           def get_page(mailing_lists=mailing_lists, url=url):
             ''' This method is a nested method that extracts a single page of mailing lists. '''
